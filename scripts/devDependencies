@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+
+/**
+ * @author Galym <galymzhan@secondcompany.nl>
+ *
+ * ⚠️ CI ONLY! DO NOT RUN ON YOUR LOCAL MACHINE ⚠️
+ * Here's why:
+ *
+ * This script reads contents of your package.json and provides
+ * and updates all packages from msq namespace with `#develop` branch.
+ *
+ * It's required for builds in development environment.
+ */
+
+const fs = require("fs");
+const path = require("path");
+
+// Read package.json
+const packageJsonPath = path.resolve(__dirname, "..", "package.json");
+fs.copyFileSync(packageJsonPath, `${packageJsonPath}.bak`);
+const packageJsonFileContents = fs.readFileSync(packageJsonPath, {
+  encoding: "utf8"
+});
+const packageJson = JSON.parse(packageJsonFileContents);
+
+/**
+ * Update deps from MSQ namespace with `#develop`.
+ * That'll make npm install it from `develop` branch.
+ * @tutorial https://stackoverflow.com/a/39732501/1319551
+ */
+const devPatchedDependencies = Object.entries(packageJson.dependencies).map(
+  ([packageName, source]) => {
+    if (
+      source.indexOf("git@gitlab.com:second-company/msq") >= 0 &&
+      source !== "git+ssh://git@gitlab.com:second-company/msq/dakota-portal.git"
+    ) {
+      return [packageName, `${source}#develop`];
+    }
+    return [packageName, source];
+  }
+);
+
+/** Write parsed dependencies back. */
+const patchedPackageJson = {
+  ...packageJson,
+  dependencies: devPatchedDependencies.reduce(
+    (allDeps, [packageName, source]) => ({
+      ...allDeps,
+      [packageName]: source
+    }),
+    {}
+  )
+};
+fs.writeFileSync(packageJsonPath, JSON.stringify(patchedPackageJson));

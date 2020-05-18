@@ -1,0 +1,34 @@
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var styled_components_1 = __importDefault(require("styled-components"));
+var Colors_1 = __importDefault(require("dakota-portal/dist/components/Colors"));
+var constants_1 = require("../../../constants");
+exports.DayWithActionMenuWrapper = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  :hover {\n    .order-action-menu-button {\n      display: block;\n    }\n  }\n"], ["\n  :hover {\n    .order-action-menu-button {\n      display: block;\n    }\n  }\n"])));
+exports.OrderDataWrapper = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: relative;\n  padding: 10px;\n  overflow: hidden;\n  user-select: none;\n\n  & > svg {\n    position: absolute;\n    top: 2px;\n    right: 2px;\n    fill: ", ";\n  }\n"], ["\n  position: relative;\n  padding: 10px;\n  overflow: hidden;\n  user-select: none;\n\n  & > svg {\n    position: absolute;\n    top: 2px;\n    right: 2px;\n    fill: ", ";\n  }\n"])), Colors_1.default.cinnabar);
+exports.DayOrderStatus = styled_components_1.default.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 7px;\n  height: 19px;\n  line-height: 19px;\n  padding-left: 16px;\n  font-size: 14px;\n  font-weight: bold;\n  color: ", ";\n\n  &:before {\n    position: absolute;\n    left: 0;\n    top: 4px;\n    content: \"\";\n    width: 10px;\n    height: 10px;\n    border-radius: 10px;\n    background-color: ", ";\n  }\n"], ["\n  position: relative;\n  margin-bottom: 7px;\n  height: 19px;\n  line-height: 19px;\n  padding-left: 16px;\n  font-size: 14px;\n  font-weight: bold;\n  color: ", ";\n\n  &:before {\n    position: absolute;\n    left: 0;\n    top: 4px;\n    content: \"\";\n    width: 10px;\n    height: 10px;\n    border-radius: 10px;\n    background-color: ", ";\n  }\n"])), function (props) { return props.color; }, function (props) { return props.color; });
+exports.FirstOrderInfoLine = styled_components_1.default.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  margin-bottom: 6px;\n  color: ", ";\n  font-size: 14px;\n  font-weight: bold;\n"], ["\n  margin-bottom: 6px;\n  color: ", ";\n  font-size: 14px;\n  font-weight: bold;\n"])), Colors_1.default.arsenic2);
+exports.SecondOrderInfoLine = styled_components_1.default.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  color: ", ";\n  font-size: 14px;\n  font-weight: bold;\n"], ["\n  color: ", ";\n  font-size: 14px;\n  font-weight: bold;\n"])), Colors_1.default.gullGrey2);
+exports.OrderType = styled_components_1.default.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  position: absolute;\n  left: 120px;\n  top: 35px;\n  font-size: 14px;\n  font-style: italic;\n  font-weight: 500;\n  text-transform: capitalize;\n  color: ", ";\n"], ["\n  position: absolute;\n  left: 120px;\n  top: 35px;\n  font-size: 14px;\n  font-style: italic;\n  font-weight: 500;\n  text-transform: capitalize;\n  color: ", ";\n"])), Colors_1.default.dimGray);
+exports.OrderActionMenuButton = styled_components_1.default.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  position: absolute;\n  right: 40px;\n  top: ", "px;\n  display: none;\n  padding-top: 4px;\n  height: 24px;\n  width: 36px;\n  text-align: center;\n  background-color: white;\n  z-index: 1;\n  cursor: pointer;\n"], ["\n  position: absolute;\n  right: 40px;\n  top: ", "px;\n  display: none;\n  padding-top: 4px;\n  height: 24px;\n  width: 36px;\n  text-align: center;\n  background-color: white;\n  z-index: 1;\n  cursor: pointer;\n"])), constants_1.ORDER_HEIGHT / 2 - 14);
+exports.LoaderWrapper = styled_components_1.default.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n"], ["\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n"])));
+exports.DraggableOrderWrapper = styled_components_1.default.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n"], ["\n  width: 100%;\n  height: 100%;\n"])));
+exports.DroppableOrderWrapper = styled_components_1.default.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n"], ["\n  width: 100%;\n  height: 100%;\n"])));
+exports.ResizableOrderWrapper = styled_components_1.default.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  border-radius: 5px;\n  border: 2px solid ", ";\n  height: ", "px;\n  box-sizing: border-box;\n  background-color: white;\n"], ["\n  border-radius: 5px;\n  border: 2px solid ", ";\n  height: ", "px;\n  box-sizing: border-box;\n  background-color: white;\n"])), Colors_1.default.dodgerBlue, constants_1.ORDER_HEIGHT);
+var BASE_ORDER = styled_components_1.default.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  position: absolute;\n  top: 8px;\n  left: ", "px;\n  width: ", "px;\n  height: ", "px;\n  box-sizing: border-box;\n  border-radius: 5px;\n  background-color: white;\n"], ["\n  position: absolute;\n  top: 8px;\n  left: ", "px;\n  width: ", "px;\n  height: ", "px;\n  box-sizing: border-box;\n  border-radius: 5px;\n  background-color: white;\n"])), function (_a) {
+    var start = _a.start;
+    return start;
+}, function (_a) {
+    var width = _a.width;
+    return width;
+}, constants_1.ORDER_HEIGHT);
+exports.SelectedOrderWrapper = styled_components_1.default(BASE_ORDER)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  border: 2px solid ", ";\n"], ["\n  border: 2px solid ", ";\n"])), Colors_1.default.dodgerBlue);
+exports.SimpleOrderWrapper = styled_components_1.default(BASE_ORDER)(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  border: 2px solid white;\n  box-shadow: 0 16px 38px 0 rgba(175, 175, 175, 0.35);\n"], ["\n  border: 2px solid white;\n  box-shadow: 0 16px 38px 0 rgba(175, 175, 175, 0.35);\n"])));
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14;
+//# sourceMappingURL=styles.js.map

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es5",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
+    "noImplicitReturns": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "lib": ["es6", "dom", "esnext.asynciterable", "es2017.object"],
+    "skipLibCheck": true,
+    "baseUrl": "."
+  },
+  "types": ["react", "react-dom"],
+  "include": ["./src/**/*"],
+  "exclude": ["_node_modules"],
+  "compileOnSave": false
+}
